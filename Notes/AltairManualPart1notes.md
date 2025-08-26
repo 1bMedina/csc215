@@ -52,3 +52,15 @@
     - Astable circuits continually switch back and forth between two states
 
 ## Number Systems
+- Dual-state electronic circuits are highly compatible with a two-digit number system 
+    -These digits are called bits (binary digits)
+- Systems based upon eight and sixteen are also compatible with complex electronic logic systems such as computers
+
+## The Binary System 
+- The Altair 8800 preforms nearly all operations in binary
+    - A typical binary number processed by the compyter incorporates 8-bits and may appear as: *011001100110*
+        - A fixed length binary number is usually called a word or byte
+- Counting in any number system is governed by one basic rule: Record successive digits for each count in a column. When the total number of available digits has been used, begin a new column to the left of the first and resume counting
+- Each bit in a binary number indicated by which power of two the number is to be raised
+
+
