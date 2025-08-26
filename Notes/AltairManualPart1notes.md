@@ -7,7 +7,7 @@
 - The Altair has 78 machine language instructions
 - The Altair is capable of preforming several operations that aren't usually available with conventional mini-computers
 
-## A. Logic
+## Logic
 - George Boole is a 19th century British mathematician
 - Boole showed how any logical statement can be analyzed with simple arithmetic relationships
     - He did not equate mathematics with logic
@@ -24,9 +24,31 @@
     - A switch OFF will not pass an electrical current, therefore it can be assigned a numerical value of 0
     - A switch ON will pass an electrical current, therefore it can be assigned a numerical value of 1
 - Various permutations for a two condition AND statement:
-
-<img src="Media/AND.png" alt="and statement">
+    <img src="Media/AND.png" alt="and statement">
 
 - Electronic ON-OFF switch equivalent:
+    <img src="Media/electrionicON-OFF.png" alt="and statement">
 
-<img src="Media/electrionicON-OFF.png" alt="and statement">
+## Electronic Logic 
+- The three basic logic functions can be implemented by simple transistor circuits 
+    - Each circuit is assigned a symbol to assist in designing logic systems. 
+    - The three symbols and their truth-tables: 
+    <img src="Media/3andtt.png" alt="3 symbols and truth table">
+- The three basic logic circuits can be combined to produce more logic analogies such as NAND (NOT-AND) and NOR (NOT-OR)
+    - These are considered basic logic circuits and have their own logic symbols and truth tables:
+    <img src="Media/NAND-NOR.png" alt="NAND and NOR symbols + truth tables">
+- Three or more logic circuits make a logic system. 
+    - Most basic logic system is the EXCLUSIVE-OR circuit: 
+    <img src="Media/exclusive-or.png" alt="exclusive-or">
+        
+    - The EXCLUSIVE-OR circuit can be used to implement logical functions, but also to ass two input conditions
+        - EXCLUSIVE-OR circuit is called a binary adder 
+        - When referring to an Exclusive OR (XOR) the CARRY is ignored and graphically represented as: 
+        <img src="Media/XOR.png" alt="XOR graphically">
+- Two NAND circuits can be connected to form a bistable circuit called a flip-flop
+    - A flip-flop changes states only when an incoming signal in the form of a pulse arrives, therefore it acts as a short term memory element
+- Other logic circuits can be connected together to form monostable and astable circuits
+    - Monostable circuits occupy one of two states unless an incoming pulse is received
+    - Astable circuits continually switch back and forth between two states
+
+## Number Systems
