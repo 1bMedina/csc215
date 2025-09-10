@@ -1,0 +1,12 @@
+LDA 
+41
+00
+MOV A->B
+LDA
+40
+00
+XRA B
+STA 
+42
+00
+HLT
