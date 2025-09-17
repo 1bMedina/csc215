@@ -1,9 +1,9 @@
 # Exclusive-Or Presentation
 # Blu and Anupama
 # Instruction: XRA
-
+#
 # Outputs true or 1 when the inputs are different (one is false, other is true). 
-
+#
 3A # 00 LDA 41      Load B from 0041
 41 # 01
 00 # 02
