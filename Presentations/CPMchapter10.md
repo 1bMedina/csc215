@@ -10,7 +10,7 @@
     - Required for `CALL` and `RET` instructions (*subroutine handling*)
 - **Why does it need to be set up manually?**
     - The stack grows **downward in memory**
-    - We must **reserve** RAM space and point to SP (stack pointer) to the **top** of that space
+    - We must **reserve** RAM space and point SP (stack pointer) to the **top** of that space
 
 - **Setting up the stack**
     - All programs must do this at the end of each program:
