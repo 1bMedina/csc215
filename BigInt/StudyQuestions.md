@@ -30,12 +30,16 @@ The program would be modified to parse the input to recognize parentheses, evalu
 
 ## Page 6
 #### 1. What are the largest and smallest integer values in the programming environment you use?
+The largest integer value is 32767 and the smallest integer value is -32767
 
 #### 2. Each BigInt object will need to store the digits that represent the BigInt value. The decision to allow arbitrarily large BigInt values affects the choices for storing digits. Name one method for storing digits that will permit an arbitrary number of digits to be stored. What effect would a limit on the number of digits in a BigInt have in the design of the BigInt class?
+You could store the digits in a dynamic array or list (like a vector or array list) so it can grow as needed. If there was a fixed digit size, you could use a fixed-size array, but there would need to be overflow checks, and it wouldn't really support very large numbers.
 
 #### 3. Based on your knowledge of pencil-and-paper methods for doing arithmetic, what do you think will be the most difficult arithmetic operation (+, *, !) to implement for the BigInt class? Why?
+Multiplication ($*$) would be the hardest. This is because of the amount of carrying and shifting when multiplying every digit in one number with every digit in the other number, this is unlike addition and subtraction which are more straight forward.
 
 #### 4. Experiment with the calculator. If you enter abcd1234 when a number is expected, what happens? If you enter 1234abcd is the behavior different? What happens if you enter an operator that’s not one of the three that are implemented?
+Letters before digits is an invalid input, and is turned into a `0`, digits before letters is valid on the other hand. Invalid inputs for the operators are rejected, and the user is re-prompted until a valid one is entered. 
 
 #### 5. List as many operations as you can that are performed on integers, but that are not included in the list of BigInt functions and operators above.
 
