@@ -7,8 +7,6 @@ struct bigint {
 void set_bigint();
 char* get_bigint();
 
-void add_bigints(
-    struct bingint *a,
-    struct bigint *b,
-    struct bigint *result
-);
+void add_bigints();
+void sub_bigints();
+

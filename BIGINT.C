@@ -33,3 +33,54 @@ struct bigint *num;
    return numstr;
 }
 
+void add_bigints(num1, num2, result)
+struct bigint *num1;
+struct bigint *num2;
+struct bigint *result;
+{
+    char i, carry, a, b, total;
+    char largest;
+    char trim;
+    
+    largest = num1->numdigits;
+    if (num2->numdigits > largest)
+        largest = num2->numdigits;
+        
+    result->digits = alloc(largest + 1);
+    result->negative = 0;
+    carry = 0;
+    
+    for (i = 0; i < largest; i++) {
+        if (i < num1->numdigits)
+            a = num1->digits[i] - '0';
+        else
+            a = 0;
+            
+        if (i < num2->numdigits)
+            b = num2->digits[i] - '0';
+        else
+            b = 0;
+        
+        total = a + b + carry;
+        carry = total / 10;
+        result->digits[i] = (total % 10) + '0';
+    }
+    
+    if (carry) {
+        result->digits[largest] = carry + '0';
+        result->numdigits = largest + 1;
+    } else {
+        result->numdigits = largest;
+    }
+    
+    trim = 0;
+    for (i = result->numdigits - 1; i > 0; i--) {
+        if (result->digits[i] == '0')
+            trim++;
+        else
+            break;
+    }
+    
+    result->numdigits -= trim;
+}
+
