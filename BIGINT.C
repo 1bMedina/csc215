@@ -84,3 +84,74 @@ struct bigint *result;
     result->numdigits -= trim;
 }
 
+
+int cmp_bigi(a, b)
+struct bigint *a;
+struct bigint *b;
+{
+    char i;
+
+    if (a->numdigits > b->numdigits)
+        return 1;
+    if (a->numdigits < b->numdigits)
+        return -1;
+
+    for (i = a->numdigits - 1; i >= 0; i--) {
+        if (a->digits[i] > b->digits[i])
+            return 1;
+        if (a->digits[i] < b->digits[i])
+            return -1;
+    }
+
+    return 0; 
+}
+
+
+void sub_bigints(num1, num2, result)
+struct bigint *num1;
+struct bigint *num2;
+struct bigint *result;
+{
+    struct bigint *a, *b;
+    char i, borrow, total;
+    char trim;
+
+
+    if (cmp_bigi(num1, num2) >= 0) {
+        a = num1;
+        b = num2;
+        result->negative = 0;
+    } else {
+        a = num2;
+        b = num1;
+        result->negative = 1;
+    }
+
+    result->digits = alloc(a->numdigits);
+    borrow = 0;
+
+    for (i = 0; i < a->numdigits; i++) {
+        total = (a->digits[i] - '0') - borrow;
+        if (i < b->numdigits)
+            total -= (b->digits[i] - '0');
+
+        if (total < 0) {
+            total += 10;
+            borrow = 1;
+        } else {
+            borrow = 0;
+        }
+
+        result->digits[i] = total + '0';
+    }
+
+
+    trim = 0;
+    for (i = a->numdigits - 1; i > 0; i--) {
+        if (result->digits[i] == '0')
+            trim++;
+        else
+            break;
+    }
+    result->numdigits = a->numdigits - trim;
+}

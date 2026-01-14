@@ -30,13 +30,13 @@ main()
     TEST_CASE("Subtract two positive bigints - 5678 - 1234");
     set_bigint("5678", &a);
     set_bigint("1234", &b);
-    add_bigints(&a, &b, &diff);
+    sub_bigints(&a, &b, &diff);
     ASSERT_STR(get_bigint(diff), "4444");
 
     TEST_CASE("Subtract two positive bigints - 123 - 546");
     set_bigint("123", &a);
     set_bigint("546", &b);
-    add_bigints(&a, &b, &diff);
+    sub_bigints(&a, &b, &diff);
     ASSERT_STR(get_bigint(diff), "-423");
 
     END_TESTING();

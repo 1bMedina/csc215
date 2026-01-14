@@ -9,4 +9,5 @@ char* get_bigint();
 
 void add_bigints();
 void sub_bigints();
+int cmp_bigi();
 
